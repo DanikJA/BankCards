@@ -1,25 +1,15 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { RouterProvider } from "@tanstack/react-router";
-import type { FunctionComponent } from "./common/types";
-import type { TanstackRouter } from "./main";
-import { TanStackRouterDevelopmentTools } from "./components/utils/development-tools/TanStackRouterDevelopmentTools";
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { MyCardsPage } from "./pages/CardsPage";
 
-const queryClient = new QueryClient();
-
-type AppProps = { router: TanstackRouter };
-
-const App = ({ router }: AppProps): FunctionComponent => {
+const App: React.FC = () => {
 	return (
-		<QueryClientProvider client={queryClient}>
-			<RouterProvider router={router} />
-			<TanStackRouterDevelopmentTools
-				initialIsOpen={false}
-				position="bottom-left"
-				router={router}
-			/>
-			<ReactQueryDevtools initialIsOpen={false} position="bottom" />
-		</QueryClientProvider>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/my-cards" element={<MyCardsPage />} />
+				<Route path="*" element={<Navigate to="/my-cards" />} />
+			</Routes>
+		</BrowserRouter>
 	);
 };
 
