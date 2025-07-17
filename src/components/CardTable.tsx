@@ -14,8 +14,8 @@ export const CardTable: React.FC<CardTableProps> = ({
 	onDelete,
 	onSetDefault,
 }) => {
-	if (cards.length === 0) return <p>No cards found</p>;
-
+	if (cards.length === 0)
+		return <p className="no-cards-message">No cards found</p>;
 	return (
 		<table className="card-table">
 			<thead>
