@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "../types";
+import "./CardTableRow.css";
 
 interface CardTableRowProps {
 	card: Card;
@@ -13,15 +14,15 @@ export const CardTableRow: React.FC<CardTableRowProps> = ({
 	onSetDefault,
 }) => {
 	return (
-		<tr>
+		<tr className="card-table-row">
 			<td>{card.brand.toUpperCase()}</td>
-			<td>**** **** **** {card.last4}</td>
-			<td>{card.isDefault ? "Основна" : ""}</td>
+			<td>{card.last4}</td>
+			<td className="default-label">{card.isDefault ? "Основна" : ""}</td>
 			<td>
 				{!card.isDefault && (
 					<button
 						onClick={() => onSetDefault(card.id)}
-						style={{ marginRight: 8 }}
+						className="card-table-button"
 					>
 						Встановити основною
 					</button>

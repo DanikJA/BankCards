@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CardBrand, Card } from "../types";
+import "./CardModal.css";
 
 interface CreateCardModalProps {
 	isOpen: boolean;
@@ -37,28 +38,8 @@ export const CreateCardModal: React.FC<CreateCardModalProps> = ({
 	};
 
 	return (
-		<div
-			style={{
-				position: "fixed",
-				top: 0,
-				left: 0,
-				right: 0,
-				bottom: 0,
-				backgroundColor: "rgba(0,0,0,0.5)",
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-			}}
-		>
-			<form
-				onSubmit={handleSubmit}
-				style={{
-					backgroundColor: "white",
-					padding: 20,
-					borderRadius: 8,
-					minWidth: 300,
-				}}
-			>
+		<div className="modal-overlay">
+			<form onSubmit={handleSubmit} className="modal-content">
 				<h2>Додати нову картку</h2>
 
 				<label>
@@ -73,7 +54,7 @@ export const CreateCardModal: React.FC<CreateCardModalProps> = ({
 					</select>
 				</label>
 
-				<label style={{ display: "block", marginTop: 10 }}>
+				<label>
 					Останні 4 цифри:
 					<input
 						type="text"
@@ -85,7 +66,7 @@ export const CreateCardModal: React.FC<CreateCardModalProps> = ({
 					/>
 				</label>
 
-				<label style={{ display: "block", marginTop: 10 }}>
+				<label>
 					<input
 						type="checkbox"
 						checked={isDefault}
@@ -94,10 +75,8 @@ export const CreateCardModal: React.FC<CreateCardModalProps> = ({
 					Встановити основною
 				</label>
 
-				<div style={{ marginTop: 20 }}>
-					<button type="submit" style={{ marginRight: 10 }}>
-						Додати
-					</button>
+				<div className="modal-buttons">
+					<button type="submit">Додати</button>
 					<button type="button" onClick={onClose}>
 						Скасувати
 					</button>

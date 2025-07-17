@@ -5,4 +5,7 @@ export interface Card {
 	brand: CardBrand;
 	last4: string;
 	isDefault: boolean;
+	fullNumber?: string;
+	expiryDate?: string;
+	cvc?: string;
 }

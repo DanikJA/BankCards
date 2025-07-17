@@ -1,4 +1,5 @@
 import React from "react";
+import "./CardFilter.css";
 
 interface CardFilterProps {
 	filter: string;
@@ -14,6 +15,6 @@ export const CardFilter: React.FC<CardFilterProps> = ({
 		placeholder="Фільтрувати за брендом або останніми 4 цифрами"
 		value={filter}
 		onChange={(e) => onFilterChange(e.target.value)}
-		style={{ padding: "8px", marginBottom: "12px", width: "100%" }}
+		className="card-filter"
 	/>
 );

@@ -16,7 +16,7 @@ export const CardTable: React.FC<CardTableProps> = ({
 	if (cards.length === 0) return <p>No cards found</p>;
 
 	return (
-		<table style={{ width: "100%", borderCollapse: "collapse" }}>
+		<table className="card-table">
 			<thead>
 				<tr>
 					<th>Бренд</th>

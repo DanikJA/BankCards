@@ -1,0 +1,13 @@
+.card-table-button {
+	margin-right: 8px;
+}
+
+.card-table-row td {
+	padding: 8px;
+	border-bottom: 1px solid #ccc;
+}
+
+.card-table-row .default-label {
+	font-weight: bold;
+	color: green;
+}

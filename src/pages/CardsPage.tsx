@@ -3,6 +3,7 @@ import { Card } from "../types";
 import { CardFilter } from "../components/CardFilter";
 import { CardTable } from "../components/CardTable";
 import { CreateCardModal } from "../components/CardModal";
+import "./CardsPage.css";
 
 export const MyCardsPage: React.FC = () => {
 	const [cards, setCards] = useState<Card[]>([]);
@@ -11,7 +12,6 @@ export const MyCardsPage: React.FC = () => {
 	const [modalOpen, setModalOpen] = useState(false);
 
 	useEffect(() => {
-		// Імітуємо завантаження даних
 		setTimeout(() => {
 			setCards([
 				{ id: "1", brand: "visa", last4: "1234", isDefault: true },
@@ -54,17 +54,17 @@ export const MyCardsPage: React.FC = () => {
 	});
 
 	return (
-		<div style={{ padding: 20, maxWidth: 700, margin: "0 auto" }}>
-			<h1>Менеджмент платіжних карток</h1>
+		<div className="page-container">
+			<h1 className="main-title">Менеджмент платіжних карток</h1>
 
-			<button onClick={() => setModalOpen(true)} style={{ marginBottom: 10 }}>
-				Create New
+			<button onClick={() => setModalOpen(true)} className="create-button">
+				Додати картку
 			</button>
 
 			<CardFilter filter={filter} onFilterChange={setFilter} />
 
 			{loading ? (
-				<p>Loading...</p>
+				<p className="loading-text">Завантаження...</p>
 			) : (
 				<CardTable
 					cards={filteredCards}

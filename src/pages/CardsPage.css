@@ -1,0 +1,45 @@
+/* MyCardsPage.css */
+
+.page-container {
+	display: flex;
+	flex-direction: column;
+	padding: 24px;
+	max-width: 1200px;
+	align-items: center;
+	justify-content: center;
+	background-color: #f9fbfd;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.main-title {
+	text-align: center;
+	font-size: 28px;
+	font-weight: 700;
+	color: #2d3748;
+	margin-bottom: 24px;
+}
+
+.create-button {
+	display: block;
+	margin: 0 auto 20px auto;
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: #3182ce;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.create-button:hover {
+	background-color: #2b6cb0;
+}
+
+.loading-text {
+	text-align: center;
+	color: #718096;
+	font-size: 16px;
+	margin-top: 20px;
+}
