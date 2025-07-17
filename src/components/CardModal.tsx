@@ -14,37 +14,41 @@ export const CreateCardModal: React.FC<CreateCardModalProps> = ({
 	onCreate,
 }) => {
 	const [brand, setBrand] = useState<CardBrand>("visa");
-	const [last4, setLast4] = useState("");
+	const [fullCardNumber, setFullCardNumber] = useState("");
 	const [isDefault, setIsDefault] = useState(false);
 
 	if (!isOpen) return null;
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		if (last4.length !== 4 || !/^\d{4}$/.test(last4)) {
-			alert("Вкажіть 4 останні цифри картки (цифри)");
+
+		if (!/^\d{12,19}$/.test(fullCardNumber)) {
+			alert("Введіть повний номер картки");
 			return;
 		}
+		const correctNumber = fullCardNumber.slice(-4);
+
 		onCreate({
 			id: Date.now().toString(),
 			brand,
-			last4,
+			last4: correctNumber,
 			isDefault,
 		});
 		setBrand("visa");
-		setLast4("");
 		setIsDefault(false);
+		setFullCardNumber("");
 		onClose();
 	};
 
 	return (
 		<div className="modal-overlay">
 			<form onSubmit={handleSubmit} className="modal-content">
-				<h2>Додати нову картку</h2>
+				<h2>Add New Card</h2>
 
 				<label>
-					Бренд:
+					Brand:
 					<select
+						className="options"
 						value={brand}
 						onChange={(e) => setBrand(e.target.value as CardBrand)}
 					>
@@ -55,13 +59,13 @@ export const CreateCardModal: React.FC<CreateCardModalProps> = ({
 				</label>
 
 				<label>
-					Останні 4 цифри:
+					Card Number:
 					<input
 						type="text"
-						maxLength={4}
-						value={last4}
-						onChange={(e) => setLast4(e.target.value)}
-						pattern="\d{4}"
+						maxLength={16}
+						value={fullCardNumber}
+						onChange={(e) => setFullCardNumber(e.target.value)}
+						placeholder="Enter full card number"
 						required
 					/>
 				</label>
@@ -72,13 +76,13 @@ export const CreateCardModal: React.FC<CreateCardModalProps> = ({
 						checked={isDefault}
 						onChange={(e) => setIsDefault(e.target.checked)}
 					/>
-					Встановити основною
+					Set the main
 				</label>
 
 				<div className="modal-buttons">
-					<button type="submit">Додати</button>
+					<button type="submit">Add Card</button>
 					<button type="button" onClick={onClose}>
-						Скасувати
+						Cancel
 					</button>
 				</div>
 			</form>

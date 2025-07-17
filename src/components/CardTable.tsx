@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "../types";
 import { CardTableRow } from "./CardTableRow";
+import "./CardTable.css";
 
 interface CardTableProps {
 	cards: Card[];
@@ -19,10 +20,10 @@ export const CardTable: React.FC<CardTableProps> = ({
 		<table className="card-table">
 			<thead>
 				<tr>
-					<th>Бренд</th>
-					<th>Картка</th>
-					<th>Статус</th>
-					<th>Дії</th>
+					<th>Brand</th>
+					<th>Last4</th>
+					<th>Default</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>

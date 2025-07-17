@@ -17,17 +17,18 @@ export const CardTableRow: React.FC<CardTableRowProps> = ({
 		<tr className="card-table-row">
 			<td>{card.brand.toUpperCase()}</td>
 			<td>{card.last4}</td>
-			<td className="default-label">{card.isDefault ? "Основна" : ""}</td>
-			<td>
-				{!card.isDefault && (
-					<button
-						onClick={() => onSetDefault(card.id)}
-						className="card-table-button"
-					>
-						Встановити основною
-					</button>
-				)}
-				<button onClick={() => onDelete(card.id)}>Видалити</button>
+			<td className="default-label">{card.isDefault ? "isDefault" : ""}</td>
+			<td className="action-buttons">
+				<button
+					onClick={() => onSetDefault(card.id)}
+					className="card-table-button"
+					style={{ visibility: card.isDefault ? "hidden" : "visible" }}
+				>
+					Set as default
+				</button>
+				<button className="deleteBtn" onClick={() => onDelete(card.id)}>
+					Delete
+				</button>
 			</td>
 		</tr>
 	);

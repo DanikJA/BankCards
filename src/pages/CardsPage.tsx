@@ -55,10 +55,10 @@ export const MyCardsPage: React.FC = () => {
 
 	return (
 		<div className="page-container">
-			<h1 className="main-title">Менеджмент платіжних карток</h1>
+			<h1 className="main-title">My Cards</h1>
 
 			<button onClick={() => setModalOpen(true)} className="create-button">
-				Додати картку
+				Add card
 			</button>
 
 			<CardFilter filter={filter} onFilterChange={setFilter} />

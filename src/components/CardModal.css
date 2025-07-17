@@ -62,7 +62,7 @@
 .modal-content select:focus,
 .modal-content input[type="text"]:focus {
 	outline: none;
-	border-color: #6366f1;
+	border-color: #3182ce;
 	box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
@@ -70,7 +70,7 @@
 	margin-right: 8px;
 	width: 16px;
 	height: 16px;
-	accent-color: #4f46e5;
+	accent-color: #3182ce;
 }
 
 .modal-content label:has(input[type="checkbox"]) {
@@ -99,12 +99,12 @@
 }
 
 .modal-buttons button[type="submit"] {
-	background-color: #4f46e5;
+	background-color: #3182ce;
 	color: white;
 }
 
 .modal-buttons button[type="submit"]:hover {
-	background-color: #4338ca;
+	background-color: #3182ce;
 	transform: translateY(-1px);
 	box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
 }

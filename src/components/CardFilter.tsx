@@ -12,7 +12,7 @@ export const CardFilter: React.FC<CardFilterProps> = ({
 }) => (
 	<input
 		type="text"
-		placeholder="Фільтрувати за брендом або останніми 4 цифрами"
+		placeholder="Search"
 		value={filter}
 		onChange={(e) => onFilterChange(e.target.value)}
 		className="card-filter"
