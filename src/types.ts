@@ -6,6 +6,4 @@ export interface Card {
 	last4: string;
 	isDefault: boolean;
 	fullNumber?: string;
-	expiryDate?: string;
-	cvc?: string;
 }

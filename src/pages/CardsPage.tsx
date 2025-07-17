@@ -13,11 +13,6 @@ export const MyCardsPage: React.FC = () => {
 
 	useEffect(() => {
 		setTimeout(() => {
-			setCards([
-				{ id: "1", brand: "visa", last4: "1234", isDefault: true },
-				{ id: "2", brand: "mastercard", last4: "5678", isDefault: false },
-				{ id: "3", brand: "amex", last4: "9012", isDefault: false },
-			]);
 			setLoading(false);
 		}, 1000);
 	}, []);
@@ -37,11 +32,11 @@ export const MyCardsPage: React.FC = () => {
 
 	const handleCreate = (card: Card) => {
 		setCards((prev) => {
-			let newCards = [...prev];
+			let oldCards = [...prev];
 			if (card.isDefault) {
-				newCards = newCards.map((c) => ({ ...c, isDefault: false }));
+				oldCards = oldCards.map((c) => ({ ...c, isDefault: false }));
 			}
-			return [...newCards, card];
+			return [...oldCards, card];
 		});
 	};
 
@@ -64,7 +59,7 @@ export const MyCardsPage: React.FC = () => {
 			<CardFilter filter={filter} onFilterChange={setFilter} />
 
 			{loading ? (
-				<p className="loading-text">Завантаження...</p>
+				<p className="loading-text">Loading...</p>
 			) : (
 				<CardTable
 					cards={filteredCards}
