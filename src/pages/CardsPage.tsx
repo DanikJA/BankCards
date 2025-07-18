@@ -52,7 +52,7 @@ export const MyCardsPage: React.FC = () => {
 		<div className="page-container">
 			<h1 className="main-title">My Cards</h1>
 
-			<button onClick={() => setModalOpen(true)} className="create-button">
+			<button onClick={() => setModalOpen(true)} className="add-button">
 				Add card
 			</button>
 
