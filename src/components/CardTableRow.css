@@ -15,10 +15,16 @@
 	border-bottom: 1px solid #ccc;
 }
 
+body.dark-theme .card-table-row td {
+	color: #edf2f7;
+}
+body.dark-theme .card-table-row td.default-label {
+	color: green;
+}
+
 .card-table-row .default-label {
 	font-weight: bold;
 	cursor: pointer;
-
 	color: green;
 }
 
