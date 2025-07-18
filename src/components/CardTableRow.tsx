@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "../types";
-import "./CardTableRow.css";
+import "./CardStyles/CardTableRow.css";
 
 interface CardTableRowProps {
 	card: Card;

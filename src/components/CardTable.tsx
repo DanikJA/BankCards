@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "../types";
 import { CardTableRow } from "./CardTableRow";
-import "./CardTable.css";
+import "./CardStyles/CardTable.css";
 
 interface CardTableProps {
 	cards: Card[];

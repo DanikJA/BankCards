@@ -3,7 +3,7 @@ import { Card } from "../types";
 import { CardFilter } from "../components/CardFilter";
 import { CardTable } from "../components/CardTable";
 import { CreateCardModal } from "../components/CardModal";
-import "./CardsPage.css";
+import "../components/CardStyles/CardsPage.css";
 import ThemeToggle from "../components/ThemeToggle";
 
 const LOCAL_STORAGE_KEY = "myCards";

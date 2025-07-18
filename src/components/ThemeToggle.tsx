@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./ThemeToggle.css";
+import "./CardStyles/ThemeToggle.css";
 
 const ThemeToggle: React.FC = () => {
 	const [darkMode, setDarkMode] = useState(false);
 
-	// При першому завантаженні перевіримо localStorage
 	useEffect(() => {
 		const savedTheme = localStorage.getItem("darkTheme");
 		if (savedTheme === "true") {
@@ -13,7 +12,6 @@ const ThemeToggle: React.FC = () => {
 		}
 	}, []);
 
-	// При зміні теми — оновлюємо body та localStorage
 	useEffect(() => {
 		if (darkMode) {
 			document.body.classList.add("dark-theme");

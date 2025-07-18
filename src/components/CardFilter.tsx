@@ -1,5 +1,5 @@
 import React from "react";
-import "./CardFilter.css";
+import "./CardStyles/CardFilter.css";
 
 interface CardFilterProps {
 	filter: string;

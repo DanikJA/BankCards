@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CardBrand, Card } from "../types";
-import "./CardModal.css";
+import "./CardStyles/CardModal.css";
 
 interface CreateCardModalProps {
 	isOpen: boolean;
